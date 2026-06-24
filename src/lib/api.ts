@@ -126,7 +126,7 @@ export function mapRawFestival(item: RawFestivalItem): Festival {
 }
 
 export async function fetchFestivals(): Promise<Festival[]> {
-  const serviceKey = '126fc93eb5c942b022866f746537cfa6b5c2f2cd141dad1d41e0fc14d0465e88';
+  const serviceKey = process.env.NEXT_PUBLIC_FESTIVAL_SERVICE_KEY || '126fc93eb5c942b022866f746537cfa6b5c2f2cd141dad1d41e0fc14d0465e88';
   const url = `https://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${serviceKey}&pageNo=1&numOfRows=100&resultType=json`;
 
   try {
